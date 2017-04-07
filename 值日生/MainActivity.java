@@ -188,14 +188,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.bt3:
                 Random r = new Random();
                 st1 = list.get(r.nextInt(list.size()));
+                while ("严相和".equals(st1)){
+                    st1 = list.get(r.nextInt(list.size()));
+                }
                 textView1.setText(st1);
+
                 st2 = list.get(r.nextInt(list.size()));
-                while (st1.equals(st2)) {
+                while (st1.equals(st2)||"严相和".equals(st2)) {
                     st2 = list.get(r.nextInt(list.size()));
                 }
                 textView2.setText(st2);
                 st3 = list.get(r.nextInt(list.size()));
-                while (st1.equals(st3) || st2.equals(st3)) {
+                while (st1.equals(st3) || st2.equals(st3)||"严相和".equals(st3)) {
                     st3 = list.get(r.nextInt(list.size()));
                 }
                 textView3.setText(st3);
